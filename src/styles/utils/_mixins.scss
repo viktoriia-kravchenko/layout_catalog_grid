@@ -1,0 +1,5 @@
+@mixin basicTextStyles($fontWeight: 400, $fontSize: 10px, $lineHeight: 14px) {
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}

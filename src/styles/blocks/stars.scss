@@ -1,0 +1,35 @@
+.stars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__quantity {
+    display: flex;
+    align-items: flex-end;
+
+    @for $index from 1 through 5 {
+      &--#{$index} :nth-child(-n + #{$index}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+  }
+
+  &__reviews {
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+    order: 1;
+
+    @include basicTextStyles(400, 10px, 14px);
+    color: $color-main-accent;
+  }
+}
