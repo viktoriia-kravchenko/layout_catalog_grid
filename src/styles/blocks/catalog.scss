@@ -1,23 +1,29 @@
 .catalog {
   &__container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(1, $card-width);
+    gap: 48px;
+    justify-content: center;
 
-    width: getContainerWidth($card-width, $cards-in-row,
-    $card-right-margin, $catalog-container-padding);
-    padding: 50px $catalog-container-padding 72px;
+    max-width: getContainerWidth($max-columns);
     margin: 0 auto;
   }
+}
 
-  &__card {
-    margin-right: $card-right-margin;
+@media (min-width: 488px) {
+  .catalog__container {
+    grid-template-columns: repeat(2, $card-width);
   }
+}
 
-  &__card:nth-child(4n) {
-    margin-right: 0;
+@media (min-width: 768px) {
+  .catalog__container {
+    grid-template-columns: repeat(3, $card-width);
   }
+}
 
-  &__card:nth-child(-n + 4) {
-    margin-bottom: 46px;
+@media (min-width: 1024px) {
+  .catalog__container {
+    grid-template-columns: repeat(4, $card-width);
   }
 }
