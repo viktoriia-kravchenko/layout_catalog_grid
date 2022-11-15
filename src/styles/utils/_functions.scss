@@ -1,4 +1,0 @@
-@function getContainerWidth($cards-number) {
-  @return $card-width * $cards-number + $gap * ($cards-number - 1) +
-    2 * $catalog-container-padding;
-}
